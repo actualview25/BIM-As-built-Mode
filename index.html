@@ -461,28 +461,28 @@
     <!-- شريط الأدوات العلوي -->
     <div class="toolbar">
         <div class="logo">🏗️ Actual view Studio</div>
-        <div class="tour-name">tour-1772720162661</div>
+        <div class="tour-name">Eng Muhannad</div>
     </div>
     
     <div id="container"></div>
     
     <!-- أزرار التحكم -->
-    <button id="autoRotateBtn">⏸️ إيقاف الدوران</button>
-    <button id="toggleMeasurements" class="active">📏 إخفاء القياسات</button>
+    <button id="autoRotateBtn">⏸️ CAMERA ROTATION</button>
+    <button id="toggleMeasurements" class="active">📏 Show Masur</button>
     
     <!-- زر المسارات للهاتف -->
     <button class="paths-toggle-btn" id="pathsToggleBtn">🔘</button>
     
     <!-- لوحة التحكم بالمسارات -->
     <div class="paths-control-panel">
-        <h3>🔘 التحكم بالمسارات</h3>
+        <h3>🔘 Track Control</h3>
         <div id="paths-toggle-list"></div>
     </div>
     
     <!-- لوحة المشاهد -->
     <div class="scene-list-panel" id="sceneListPanel">
         <div class="panel-header" id="panelHeader">
-            <h3><span>📋</span><span>قائمة المشاهد</span></h3>
+            <h3><span>📋</span><span>Scene lest</span></h3>
             <button class="panel-toggle" id="togglePanelBtn">◀</button>
         </div>
         <div class="scene-list-container" id="sceneListContainer"></div>
@@ -502,24 +502,28 @@
         let allPaths = [];
         let hotspotMarkers = {};
         let measurementElements = [];
-        let showMeasurements = true;
+        let showMeasurements = false;
         
         const pathColors = { EL: '#ffcc00', AC: '#00ccff', WP: '#0066cc', WA: '#ff3300', GS: '#33cc33' };
         
         // ===== دوال القياس =====
         function createMeasurementElement(measurement) {
-            const lineDiv = document.createElement('div');
-            lineDiv.className = 'measurement-line';
-            
-            const startPoint = document.createElement('div');
-            startPoint.className = 'measurement-point';
-            
-            const endPoint = document.createElement('div');
-            endPoint.className = 'measurement-point';
-            
-            const label = document.createElement('div');
-            label.className = 'measurement-label';
-            label.textContent = measurement.length + ' m';
+    const lineDiv = document.createElement('div');
+    lineDiv.className = 'measurement-line';
+    lineDiv.style.display = 'none'; // 👈 مخفي افتراضياً
+    
+    const startPoint = document.createElement('div');
+    startPoint.className = 'measurement-point';
+    startPoint.style.display = 'none'; // 👈 مخفي
+    
+    const endPoint = document.createElement('div');
+    endPoint.className = 'measurement-point';
+    endPoint.style.display = 'none'; // 👈 مخفي
+    
+    const label = document.createElement('div');
+    label.className = 'measurement-label';
+    label.textContent = measurement.length + ' m';
+    label.style.display = 'none'; // 👈 مخفي
             
             lineDiv._start = new THREE.Vector3(measurement.start.x, measurement.start.y, measurement.start.z);
             lineDiv._end = new THREE.Vector3(measurement.end.x, measurement.end.y, measurement.end.z);
