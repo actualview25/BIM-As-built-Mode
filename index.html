@@ -782,19 +782,20 @@
             });
         }
         
-        function createPathsTogglePanel() {
-            const toggleList = document.getElementById('paths-toggle-list');
-            if (!toggleList) return;
-            toggleList.innerHTML = '';
-            ['EL', 'AC', 'WP', 'WA', 'GS'].forEach(type => {
-                const div = document.createElement('div');
-                div.className = 'path-toggle-item';
-                div.innerHTML = '<input type="checkbox" id="toggle-' + type + '" checked data-type="' + type + '">' +
-                    '<label for="toggle-' + type + '"><span class="path-color-dot" style="background:' + pathColors[type] + '"></span> ' + type + '</label>';
-                div.querySelector('input').addEventListener('change', e => togglePathsByType(type, e.target.checked));
-                toggleList.appendChild(div);
-            });
-        }
+       function createPathsTogglePanel() {
+    const toggleList = document.getElementById('paths-toggle-list');
+    if (!toggleList) return;
+    toggleList.innerHTML = '';
+    ['EL', 'AC', 'WP', 'WA', 'GS'].forEach(type => {
+        const div = document.createElement('div');
+        div.className = 'path-toggle-item';
+        // 👈 checked = false
+        div.innerHTML = '<input type="checkbox" id="toggle-' + type + '" data-type="' + type + '">' +
+            '<label for="toggle-' + type + '"><span class="path-color-dot" style="background:' + pathColors[type] + '"></span> ' + type + '</label>';
+        div.querySelector('input').addEventListener('change', e => togglePathsByType(type, e.target.checked));
+        toggleList.appendChild(div);
+    });
+}
         function loadScene(index) {
     const sceneData = scenes[index];
     if (!sceneData) return;
