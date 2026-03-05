@@ -1,10 +1,8 @@
-
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>Eng Muhannad 0567087973</title>
+    <title>Eng Muhannad 0567087973 - جولة افتراضية</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -13,7 +11,7 @@
         body { margin: 0; overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; direction: rtl; }
         #container { width: 100vw; height: 100vh; background: #000; }
         
-        /* ===== شريط الأدوات العلوي - مثل الأداة تماماً ===== */
+        /* ===== شريط الأدوات العلوي ===== */
         .toolbar {
             position: fixed;
             top: 0;
@@ -168,122 +166,100 @@
             display: inline-block; 
         }
         
-/* ===== لوحة المشاهد - نفس الحجم السابق مع سكرول ===== */
-.scene-list-panel {
-    position: fixed; 
-    top: 50%; 
-    left: 20px; 
-    transform: translateY(-50%);
-    width: 260px; 
-    max-height: 70vh; /* نفس الحجم السابق */
-    background: rgba(20, 30, 40, 0.25);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(74, 108, 143, 0.3);
-    border-radius: 12px;
-    color: white;
-    z-index: 900;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    transition: all 0.3s ease; /* مهم لزر الإخفاء */
-}
-
-/* حالة الإخفاء - نفس الحجم السابق */
-.scene-list-panel.collapsed {
-    width: 50px;
-    overflow: hidden;
-}
-
-.scene-list-panel.collapsed .panel-header h3 span:last-child,
-.scene-list-panel.collapsed .scene-list-container {
-    display: none;
-}
-
-.panel-header {
-    padding: 12px;
-    border-bottom: 1px solid rgba(74, 108, 143, 0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(0,0,0,0.2);
-    flex-shrink: 0;
-    cursor: pointer; /* مؤشر يد للزر */
-}
-
-.panel-header h3 { 
-    margin: 0; 
-    color: white; 
-    font-size: 14px; 
-    font-weight: 500; 
-    display: flex; 
-    align-items: center; 
-    gap: 8px; 
-}
-
-.panel-toggle {
-    background: none; 
-    border: none; 
-    color: rgba(255,255,255,0.7); 
-    font-size: 16px; 
-    cursor: pointer;
-    width: 28px; 
-    height: 28px; 
-    border-radius: 50%; 
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    transition: all 0.2s;
-    flex-shrink: 0;
-}
-
-.panel-toggle:hover { 
-    background: rgba(255,255,255,0.1); 
-    color: white; 
-}
-
-/* قائمة المشاهد - مع سكرول */
-.scene-list-container {
-    max-height: calc(70vh - 60px); /* نفس الحساب السابق */
-    overflow-y: auto !important;
-    overflow-x: hidden;
-    padding: 8px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(74, 108, 143, 0.4) rgba(0,0,0,0.2);
-}
-
-/* تحسين شريط التمرير - نحيف جداً */
-.scene-list-container::-webkit-scrollbar {
-    width: 4px;
-}
-
-.scene-list-container::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.scene-list-container::-webkit-scrollbar-thumb {
-    background: rgba(74, 108, 143, 0.3);
-    border-radius: 4px;
-}
-
-.scene-list-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(74, 108, 143, 0.6);
-}
-
-/* عناصر المشاهد - نفس الحجم */
-.scene-item {
-    padding: 10px 12px;
-    margin: 4px 0;
-    background: rgba(255,255,255,0.03);
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-    font-size: 13px;
-}
+        /* ===== لوحة المشاهد ===== */
+        .scene-list-panel {
+            position: fixed; 
+            top: 50%; 
+            left: 20px; 
+            transform: translateY(-50%);
+            width: 260px; 
+            max-height: 70vh;
+            background: rgba(20, 30, 40, 0.25);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(74, 108, 143, 0.3);
+            border-radius: 12px;
+            color: white;
+            z-index: 900;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .scene-list-panel.collapsed { width: 50px; overflow: hidden; }
+        .scene-list-panel.collapsed .panel-header h3 span:last-child,
+        .scene-list-panel.collapsed .scene-list-container { display: none; }
+        
+        .panel-header {
+            padding: 12px;
+            border-bottom: 1px solid rgba(74, 108, 143, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .panel-header h3 { 
+            margin: 0; 
+            color: white; 
+            font-size: 14px; 
+            font-weight: 500; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+        }
+        .panel-toggle {
+            background: none; 
+            border: none; 
+            color: rgba(255,255,255,0.7); 
+            font-size: 16px; 
+            cursor: pointer;
+            width: 28px; 
+            height: 28px; 
+            border-radius: 50%; 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .panel-toggle:hover { 
+            background: rgba(255,255,255,0.1); 
+            color: white; 
+        }
+        
+        .scene-list-container {
+            max-height: calc(70vh - 60px);
+            overflow-y: auto !important;
+            overflow-x: hidden;
+            padding: 8px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(74, 108, 143, 0.4) rgba(0,0,0,0.2);
+        }
+        
+        .scene-list-container::-webkit-scrollbar { width: 4px; }
+        .scene-list-container::-webkit-scrollbar-track { background: transparent; }
+        .scene-list-container::-webkit-scrollbar-thumb { background: rgba(74, 108, 143, 0.3); border-radius: 4px; }
+        
+        .scene-item {
+            padding: 10px 12px;
+            margin: 4px 0;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+            font-size: 13px;
+        }
+        .scene-item:hover { background: rgba(74, 108, 143, 0.2); }
+        .scene-item.active { background: rgba(74, 108, 143, 0.3); border-right: 3px solid #88aaff; }
+        .scene-icon { font-size: 18px; }
+        .scene-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .scene-hotspot-count { font-size: 11px; background: rgba(74, 108, 143, 0.3); padding: 2px 6px; border-radius: 10px; color: white; }
         
         /* ===== أنماط Hotspots ===== */
         .hotspot-marker {
@@ -304,88 +280,44 @@
             background: rgba(0,0,0,0.3);
             border: 2px solid;
         }
-        .hotspot-marker:hover img {
-            transform: scale(1.15);
-            filter: drop-shadow(0 0 15px gold);
-        }
+        .hotspot-marker:hover img { transform: scale(1.15); filter: drop-shadow(0 0 15px gold); }
         .hotspot-label {
-            position: absolute; 
-            top: -40px; 
-            left: 50%; 
-            transform: translateX(-50%);
-            background: rgba(20, 30, 40, 0.95); 
-            backdrop-filter: blur(5px);
-            color: white; 
-            padding: 6px 12px; 
-            border-radius: 20px;
-            font-size: 12px; 
-            white-space: nowrap; 
-            border: 2px solid;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
-            opacity: 0;
-            transition: opacity 0.2s ease; 
-            pointer-events: none; 
-            z-index: 1001;
+            position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+            background: rgba(20, 30, 40, 0.95); backdrop-filter: blur(5px);
+            color: white; padding: 6px 12px; border-radius: 20px;
+            font-size: 12px; white-space: nowrap; border: 2px solid;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); opacity: 0;
+            transition: opacity 0.2s ease; pointer-events: none; z-index: 1001;
             font-weight: 500;
         }
         .hotspot-marker:hover .hotspot-label { opacity: 1; }
         
         /* ===== أنماط القياسات ===== */
         .measurement-line {
-            position: absolute; 
-            pointer-events: none; 
-            z-index: 500;
-            border-top: 4px solid #ffaa44; 
-            box-shadow: 0 0 20px #ffaa44;
-            border-radius: 4px; 
-            transform-origin: 0 0; 
-            height: 4px;
+            position: absolute; pointer-events: none; z-index: 500;
+            border-top: 4px solid #ffaa44; box-shadow: 0 0 20px #ffaa44;
+            border-radius: 4px; transform-origin: 0 0; height: 4px;
         }
         .measurement-point {
-            position: absolute; 
-            width: 12px; 
-            height: 12px;
-            background: #ffaa44; 
-            border-radius: 50%;
-            box-shadow: 0 0 20px #ffaa44; 
-            transform: translate(-50%, -50%); 
-            z-index: 501;
+            position: absolute; width: 12px; height: 12px;
+            background: #ffaa44; border-radius: 50%;
+            box-shadow: 0 0 20px #ffaa44; transform: translate(-50%, -50%); z-index: 501;
         }
         .measurement-label {
-            position: absolute; 
-            background: rgba(0, 0, 0, 0.8);
-            color: white; 
-            padding: 8px 16px; 
-            border-radius: 30px; 
-            font-size: 20px;
-            font-weight: bold; 
-            border: 2px solid #ffaa44; 
-            box-shadow: 0 0 30px #ffaa44;
-            transform: translate(-50%, -50%); 
-            white-space: nowrap; 
-            z-index: 503;
-            backdrop-filter: blur(5px); 
-            text-shadow: 2px 2px 4px black;
+            position: absolute; background: rgba(0, 0, 0, 0.8);
+            color: white; padding: 8px 16px; border-radius: 30px; font-size: 20px;
+            font-weight: bold; border: 2px solid #ffaa44; box-shadow: 0 0 30px #ffaa44;
+            transform: translate(-50%, -50%); white-space: nowrap; z-index: 503;
+            backdrop-filter: blur(5px); text-shadow: 2px 2px 4px black;
         }
         
         /* ===== نافذة المعلومات ===== */
         .custom-info-window {
-            position: fixed; 
-            bottom: 30px; 
-            left: 50%; 
-            transform: translateX(-50%);
-            background: rgba(20, 30, 40, 0.95); 
-            backdrop-filter: blur(10px);
-            border: 2px solid #ffaa44; 
-            border-radius: 16px; 
-            padding: 20px 30px;
-            color: white; 
-            z-index: 2000; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            max-width: 400px; 
-            width: 90%; 
-            animation: slideUp 0.3s ease; 
-            direction: rtl;
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            background: rgba(20, 30, 40, 0.95); backdrop-filter: blur(10px);
+            border: 2px solid #ffaa44; border-radius: 16px; padding: 20px 30px;
+            color: white; z-index: 2000; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            max-width: 400px; width: 90%; animation: slideUp 0.3s ease; direction: rtl;
         }
         
         @keyframes slideUp {
@@ -437,51 +369,30 @@
                 box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             }
             
-            .scene-list-panel { 
-                width: 200px; 
-                left: 10px; 
-            }
-            .scene-list-panel.collapsed { 
-                width: 40px; 
-                left: 0; 
-            }
-            
-            #autoRotateBtn { 
-                font-size: 13px; 
-                padding: 10px 18px; 
-            }
-            #toggleMeasurements { 
-                bottom: 70px; 
-                right: 10px; 
-                padding: 8px 14px; 
-                font-size: 12px; 
-            }
+            .scene-list-panel { width: 200px; left: 10px; }
+            .scene-list-panel.collapsed { width: 40px; left: 0; }
+            #autoRotateBtn { font-size: 13px; padding: 10px 18px; }
+            #toggleMeasurements { bottom: 70px; right: 10px; padding: 8px 14px; font-size: 12px; }
         }
     </style>
 </head>
 <body>
-    <!-- شريط الأدوات العلوي -->
     <div class="toolbar">
-        <div class="logo">🏗️ Actual view Studio</div>
-        <div class="tour-name">Eng Muhannad</div>
+        <div class="logo">🏗️ Eng Muhannad</div>
+        <div class="tour-name">جولة افتراضية</div>
     </div>
     
     <div id="container"></div>
     
-    <!-- أزرار التحكم -->
-    <button id="autoRotateBtn">⏸️ Stop Rotation</button>
-    <button id="toggleMeasurements" class="active">📏 Hide Measur</button>
-    
-    <!-- زر المسارات للهاتف -->
+    <button id="autoRotateBtn">⏸️ Camera Rotation</button>
+    <button id="toggleMeasurements">📏 Show masur</button>
     <button class="paths-toggle-btn" id="pathsToggleBtn">🔘</button>
     
-    <!-- لوحة التحكم بالمسارات -->
     <div class="paths-control-panel">
         <h3>🔘 TRACK CONTROL</h3>
         <div id="paths-toggle-list"></div>
     </div>
     
-    <!-- لوحة المشاهد -->
     <div class="scene-list-panel" id="sceneListPanel">
         <div class="panel-header" id="panelHeader">
             <h3><span>📋</span><span>SCENE LIST</span></h3>
@@ -504,29 +415,28 @@
         let allPaths = [];
         let hotspotMarkers = {};
         let measurementElements = [];
-        let showMeasurements = false;
+        let showMeasurements = false; // القياسات مخفية افتراضياً
         
         const pathColors = { EL: '#ffcc00', AC: '#00ccff', WP: '#0066cc', WA: '#ff3300', GS: '#33cc33' };
         
         // ===== دوال القياس =====
         function createMeasurementElement(measurement) {
-            function createMeasurementElement(measurement) {
-    const lineDiv = document.createElement('div');
-    lineDiv.className = 'measurement-line';
-    lineDiv.style.display = 'none'; // 👈 مخفي افتراضياً
-    
-    const startPoint = document.createElement('div');
-    startPoint.className = 'measurement-point';
-    startPoint.style.display = 'none'; // 👈 مخفي
-    
-    const endPoint = document.createElement('div');
-    endPoint.className = 'measurement-point';
-    endPoint.style.display = 'none'; // 👈 مخفي
-    
-    const label = document.createElement('div');
-    label.className = 'measurement-label';
-    label.textContent = measurement.length + ' m';
-    label.style.display = 'none'; // 👈 مخفي
+            const lineDiv = document.createElement('div');
+            lineDiv.className = 'measurement-line';
+            lineDiv.style.display = 'none'; // مخفي افتراضياً
+            
+            const startPoint = document.createElement('div');
+            startPoint.className = 'measurement-point';
+            startPoint.style.display = 'none';
+            
+            const endPoint = document.createElement('div');
+            endPoint.className = 'measurement-point';
+            endPoint.style.display = 'none';
+            
+            const label = document.createElement('div');
+            label.className = 'measurement-label';
+            label.textContent = measurement.length + ' m';
+            label.style.display = 'none';
             
             lineDiv._start = new THREE.Vector3(measurement.start.x, measurement.start.y, measurement.start.z);
             lineDiv._end = new THREE.Vector3(measurement.end.x, measurement.end.y, measurement.end.z);
@@ -561,7 +471,6 @@
                     elem.label.style.display = 'none';
                     return;
                 }
-
                 const x1 = (start.x * 0.5 + 0.5) * width;
                 const y1 = (-start.y * 0.5 + 0.5) * height;
                 const x2 = (end.x * 0.5 + 0.5) * width;
@@ -636,7 +545,6 @@
                 toggleBtn.textContent = panel.classList.contains('collapsed') ? '▶' : '◀';
             });
             
-            // استعادة الحالة المخزنة
             const savedState = localStorage.getItem('scenePanelCollapsed');
             if (savedState === 'true') {
                 panel.classList.add('collapsed');
@@ -777,7 +685,6 @@
                 el.style.top = y + 'px';
             });
         }
-        
         // ===== دوال المسارات =====
         function togglePathsByType(type, visible) {
             allPaths.forEach(p => { 
@@ -792,105 +699,87 @@
             ['EL', 'AC', 'WP', 'WA', 'GS'].forEach(type => {
                 const div = document.createElement('div');
                 div.className = 'path-toggle-item';
-                div.innerHTML = '<input type="checkbox" id="toggle-' + type + '" checked data-type="' + type + '">' +
+                div.innerHTML = '<input type="checkbox" id="toggle-' + type + '" data-type="' + type + '">' +
                     '<label for="toggle-' + type + '"><span class="path-color-dot" style="background:' + pathColors[type] + '"></span> ' + type + '</label>';
                 div.querySelector('input').addEventListener('change', e => togglePathsByType(type, e.target.checked));
                 toggleList.appendChild(div);
             });
         }
         
-     function loadScene(index) {
-    const sceneData = scenes[index];
-    if (!sceneData) return;
-    
-    currentSceneIndex = index;
-    
-    if (sphereMesh) scene3D.remove(sphereMesh);
-    document.querySelectorAll('.hotspot-marker').forEach(el => el.remove());
-    allPaths.forEach(p => scene3D.remove(p));
-    allPaths = [];
-    
-    new THREE.TextureLoader().load(sceneData.image, function(texture) {
-        texture.wrapS = THREE.RepeatWrapping;
-        texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.x = -1;
-        
-        sphereMesh = new THREE.Mesh(
-            new THREE.SphereGeometry(500, 128, 128),
-            new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide })
-        );
-        scene3D.add(sphereMesh);
-        
-        // إعادة بناء المسارات
-        if (sceneData.paths && sceneData.paths.length > 0) {
-            console.log('🔄 بناء', sceneData.paths.length, 'مسار في الجولة المصدرة');
+        function loadScene(index) {
+            const sceneData = scenes[index];
+            if (!sceneData) return;
             
-            sceneData.paths.forEach(pathData => {
-                if (!pathData.points || pathData.points.length < 2) return;
+            currentSceneIndex = index;
+            
+            if (sphereMesh) scene3D.remove(sphereMesh);
+            document.querySelectorAll('.hotspot-marker').forEach(el => el.remove());
+            allPaths.forEach(p => scene3D.remove(p));
+            allPaths = [];
+            
+            new THREE.TextureLoader().load(sceneData.image, function(texture) {
+                texture.wrapS = THREE.RepeatWrapping;
+                texture.wrapT = THREE.RepeatWrapping;
+                texture.repeat.x = -1;
                 
-                const color = pathData.color || '#ffaa44';
-                const points = pathData.points.map(p => new THREE.Vector3(p.x, p.y, p.z));
+                sphereMesh = new THREE.Mesh(
+                    new THREE.SphereGeometry(500, 128, 128),
+                    new THREE.MeshBasicMaterial({ map: texture, side: THREE.BackSide })
+                );
+                scene3D.add(sphereMesh);
                 
-                for (let i = 0; i < points.length - 1; i++) {
-                    const start = points[i];
-                    const end = points[i + 1];
+                if (sceneData.paths && sceneData.paths.length > 0) {
+                    console.log('🔄 بناء', sceneData.paths.length, 'مسار');
                     
-                    const direction = new THREE.Vector3().subVectors(end, start);
-                    const distance = direction.length();
+                    sceneData.paths.forEach(pathData => {
+                        if (!pathData.points || pathData.points.length < 2) return;
+                        
+                        const color = pathData.color || '#ffaa44';
+                        const points = pathData.points.map(p => new THREE.Vector3(p.x, p.y, p.z));
+                        
+                        for (let i = 0; i < points.length - 1; i++) {
+                            const start = points[i];
+                            const end = points[i + 1];
+                            
+                            const direction = new THREE.Vector3().subVectors(end, start);
+                            const distance = direction.length();
+                            
+                            if (distance < 0.5) continue;
+                            
+                            const cylinder = new THREE.Mesh(
+                                new THREE.CylinderGeometry(3.5, 3.5, distance, 12),
+                                new THREE.MeshStandardMaterial({ 
+                                    color: color,
+                                    emissive: color,
+                                    emissiveIntensity: 0.4
+                                })
+                            );
+                            
+                            const midpoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+                            cylinder.position.copy(midpoint);
+                            
+                            cylinder.quaternion.setFromUnitVectors(
+                                new THREE.Vector3(0, 1, 0),
+                                direction.clone().normalize()
+                            );
+                            
+                            cylinder.visible = false; // المسارات مخفية افتراضياً
+                            cylinder.userData = { type: pathData.type };
+                            
+                            scene3D.add(cylinder);
+                            allPaths.push(cylinder);
+                        }
+                    });
                     
-                    if (distance < 0.5) continue;
-                    
-                    // ✅ تعديل السمك هنا
-                    const cylinder = new THREE.Mesh(
-                        new THREE.CylinderGeometry(3.5, 3.5, distance, 12),  // من 0.3 إلى 3.5
-                        new THREE.MeshStandardMaterial({ 
-                            color: color,
-                            emissive: color,
-                            emissiveIntensity: 0.4
-                        })
-                    );
-                    
-                    const midpoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
-                    cylinder.position.copy(midpoint);
-                    
-                    cylinder.quaternion.setFromUnitVectors(
-                        new THREE.Vector3(0, 1, 0),
-                        direction.clone().normalize()
-                    );
-                    
-                    cylinder.userData = { type: pathData.type };
-                    scene3D.add(cylinder);
-                    allPaths.push(cylinder);
+                    console.log('✅ تم بناء', allPaths.length, 'مقطع مسار (مخفي)');
                 }
+                
+                setTimeout(rebuildHotspots, 200);
+                loadMeasurements(sceneData);
+                updateSceneList();
             });
-            
-            console.log('✅ تم بناء', allPaths.length, 'مقطع مسار');
         }
         
-        setTimeout(rebuildHotspots, 200);
-        loadMeasurements(sceneData);
-        updateSceneList();
-    });
-}
-        // التأكد من ظهور السكرول
-function ensureScrollbar() {
-    const container = document.getElementById('sceneListContainer');
-    if (!container) return;
-    
-    // حساب ارتفاع الرأس
-    const header = document.querySelector('.panel-header');
-    const headerHeight = header ? header.offsetHeight : 50;
-    
-    // ضبط ارتفاع القائمة
-    container.style.maxHeight = (400 - headerHeight - 2) + 'px';
-    container.style.overflowY = 'auto';
-    
-    console.log('📏 ارتفاع القائمة:', container.style.maxHeight);
-}
-
-// استدعاء بعد تحميل المشاهد
-setTimeout(ensureScrollbar, 500);
-window.addEventListener('resize', ensureScrollbar);
         // ===== التهيئة =====
         fetch('tour-data.json')
             .then(res => res.json())
