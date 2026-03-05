@@ -795,8 +795,7 @@
                 toggleList.appendChild(div);
             });
         }
-        
-     function loadScene(index) {
+        function loadScene(index) {
     const sceneData = scenes[index];
     if (!sceneData) return;
     
@@ -837,9 +836,8 @@
                     
                     if (distance < 0.5) continue;
                     
-                    // ✅ تعديل السمك هنا
                     const cylinder = new THREE.Mesh(
-                        new THREE.CylinderGeometry(3.5, 3.5, distance, 12),  // من 0.3 إلى 3.5
+                        new THREE.CylinderGeometry(3.5, 3.5, distance, 12),
                         new THREE.MeshStandardMaterial({ 
                             color: color,
                             emissive: color,
@@ -855,13 +853,16 @@
                         direction.clone().normalize()
                     );
                     
+                    // ✅ المسار مخفي افتراضياً
+                    cylinder.visible = false;
                     cylinder.userData = { type: pathData.type };
+                    
                     scene3D.add(cylinder);
                     allPaths.push(cylinder);
                 }
             });
             
-            console.log('✅ تم بناء', allPaths.length, 'مقطع مسار');
+            console.log('✅ تم بناء', allPaths.length, 'مقطع مسار (مخفية)');
         }
         
         setTimeout(rebuildHotspots, 200);
